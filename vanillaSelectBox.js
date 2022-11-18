@@ -91,7 +91,7 @@ function vanillaSelectBox(domSelector, options) {
     this.inputBox = null;
     this.disabledItems = [];
     this.ulminWidth = 140;
-    this.ulmaxWidth = 280;
+    this.ulmaxWidth = 1920;
     this.ulminHeight = 25;
     this.maxOptionWidth = Infinity;
     this.maxSelect = Infinity;
@@ -103,7 +103,7 @@ function vanillaSelectBox(domSelector, options) {
     this.forbidenAttributes = ["class", "selected", "disabled", "data-text", "data-value", "style"];
     this.forbidenClasses = ["active", "disabled"];
     this.userOptions = {
-        maxWidth: 500,
+        maxWidth: screen, // changed to screen
         minWidth: -1,
         maxHeight: 400,
         translations: { "all": "All", "item": "item","items": "items", "selectAll": "Select All", "clearAll": "Clear All" },
@@ -208,13 +208,13 @@ function vanillaSelectBox(domSelector, options) {
         if (selector === ".vsb-main button") {
             cssArray = [
                 { "key": "min-width", "value": "120px" },
-                { "key": "border-radius", "value": "0" },
+                { "key": "border-radius", "value": "5px" },
                 { "key": "width", "value": "100%" },
                 { "key": "text-align", "value": "left" },
                 { "key": "z-index", "value": "1" },
                 { "key": "color", "value": "#333" },
                 { "key": "background", "value": "white !important" },
-                { "key": "border", "value": "1px solid #999 !important" },
+                { "key": "border", "value": "0px solid #999 !important" },
                 { "key": "line-height", "value": "20px" },
                 { "key": "font-size", "value": "14px" },
                 { "key": "padding", "value": "6px 12px" }

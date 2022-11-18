@@ -17,10 +17,10 @@ li[data-parent].open:not(.hidden-search){
 	display:block;
 	visibility: hidden;
   position:absolute;/*Don't change*/
-  border:1px solid #B2B2B2;
+  /*border:1px solid #B2B2B2;*/
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,.15);
+  /*border: 1px solid rgba(0,0,0,.15);*/
   box-shadow: 0 6px 12px rgba(0,0,0,.175);
   border-radius:4px;
   font-size : 11px;
@@ -29,7 +29,7 @@ li[data-parent].open:not(.hidden-search){
 .vsb-js-search-zone{
 	position:absolute;/*Don't change*/
     z-index:1001;
-	width: 80%;
+	width: 92%;
 	min-height:1.8em;
 	padding: 2px;
 	background-color: #fff;
@@ -38,9 +38,10 @@ li[data-parent].open:not(.hidden-search){
 .vsb-js-search-zone input{
 	border: 1px solid grey;
 	margin-left: 2px;
-	width: 96%;
-	border-radius: 4px;
+	width: 98%;
+	border-radius: 5px;
 	height: 25px !important;
+	margin-top: 3px;
 }
 
 .vsb-main{
@@ -48,6 +49,7 @@ li[data-parent].open:not(.hidden-search){
 	display: inline-block;
 	vertical-align: middle;
 	text-align:left;
+	width: 100%;
 }
 
 .vsb-menu li:hover {
@@ -93,10 +95,11 @@ li.short{
 	z-index: 1;
 	color: #333;
 	background: white !important;
-	border: 1px solid #999 !important;
+	/*border: 1px solid #5C6675 !important;*/
 	line-height:20px;
 	font-size:14px;
 	padding:6px 12px;
+	max-width: 100%;
 }
 
 .vsb-main button.disabled{
@@ -110,7 +113,8 @@ li.short{
 }
 
 .vsb-main li:hover {
-	background: linear-gradient(#f5f5f5, #e8e8e8);
+	background: linear-gradient(#28a745, #28a745);
+	color: white;
 }
 
 .vsb-main ul{
@@ -223,6 +227,7 @@ li.short{
 
 .vsb-menu .multi li:not(.grouped-option)::before{
 	content: "";
+	background-color: #ffffff;
 	display: inline-block;
 	font-size: inherit;
 	float:left;
@@ -232,9 +237,10 @@ li.short{
 	border : 1px solid;
 	border-radius : 3px;
 	padding : 7px;
-	margin-top:0px;
-	color:black;
+	margin-top:2px;
+	color: #28a745;
 }
+
 
 .vsb-menu .multi li:not(.grouped-option).active::after {
 	content: "";
@@ -242,14 +248,14 @@ li.short{
 	font-size: inherit;
 	color: #333;
 	float:left;
-	margin-left:-18px;
+	margin-left:-17px;
 	display: inline-block;
 	transform: rotate(45deg);
-	margin-top:1px;
+	margin-top:5px;
 	height: 8px;
 	width:  5px;
-	border-bottom: 3px solid black;
-	border-right:  3px solid black;
+	border-bottom: 2px solid #28a745;
+	border-right:  2px solid #28a745;
 }
 
 .caret {
