@@ -579,7 +579,8 @@ function vanillaSelectBox(domSelector, options) {
             self.drop.style.left = "0px";
             self.drop.style.top = "0px";
             self.button.style.border = "none";
-        } else {
+        }
+        else {
             this.main.addEventListener("click", function (e) {
                 if (self.isDisabled) return;
                 self.drop.style.visibility = "visible";

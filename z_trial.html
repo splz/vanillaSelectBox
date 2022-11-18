@@ -83,6 +83,14 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="col-lg-6 col-xxl-4">
+                                        <div class="pb-3" id="na_volvox">
+                                            <p style="margin: 0px"><strong>Volvo</strong></p>
+                                            <select id="na_volvo1" multiple size="2" style="width: 100%">
+                                            </select>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -93,38 +101,87 @@
     </div>
 </section>
 <script>
-    let selectBox = new vanillaSelectBox("#brands",{"maxHeight":200,search:true});
+
+   // const prod_years = {
+   //     'na_volvo' : {'brand':'Volvo', 'category': 'Trucks', 'form_name': 'new_arrivals', 'years': [2017, 2018, 2019, 2020, 2021]}
+   //     , 'na_mb' : {'brand':'Mercedes-Benz', 'category': 'Trucks', 'form_name': 'new_arrivals', 'years': [2016, 2017, 2018, 2019, 2020, 2021]}
+   //     , 'na_daf' : {'brand':'DAF', 'category': 'Trucks', 'form_name': 'new_arrivals', 'years': [2018, 2019, 2020, 2021]}
+   //     , 'na_scb_ref' : {'brand':'Schmitz Cargobull', 'category': 'Reefers', 'form_name': 'new_arrivals', 'years': [2016, 2017, 2018, 2019, 2020, 2021]}
+   //     , 'na_kr_ref' : {'brand':'Krone', 'category': 'Reefers', 'form_name': 'new_arrivals', 'years': [2018, 2019, 2020,2021]}
+   //     , 'na_kr_tent' : {'brand':'Krone', 'category': 'Tilts', 'form_name': 'new_arrivals', 'years': [2017, 2018]}
+   //     , 'na_scb_tent' : {'brand':'Schmitz Cargobull', 'category': 'Tilts', 'form_name': 'new_arrivals', 'years': [2016, 2017, 2018, 2019]}
+   //     , 'na_koe_tent' : {'brand':'Koegel', 'category': 'Tilts', 'form_name': 'new_arrivals', 'years': [2016]}
+   //     , 'na_avail' : {'brand': 'Availability', 'category': 'Other', 'form_name': 'new_arrivals', 'years': ['In sales yard', 'Within 3 weeks', 'Within 6 weeks', 'Within 3 month', 'Within 5 months']}
+   //     , 'so_volvo' : {'brand':'Volvo', 'category': 'Trucks', 'form_name': 'special_offers', 'years': [2016, 2017, 2018, 2019, 2020, 2021]}
+   //     , 'so_mb' : {'brand':'Mercedes-Benz', 'category': 'Trucks', 'form_name': 'special_offers', 'years': [2016, 2017, 2018, 2019, 2020, 2021]}
+   //     , 'so_daf' : {'brand':'DAF', 'category': 'Trucks', 'form_name': 'special_offers', 'years': [2016, 2017, 2018, 2019, 2020, 2021]}
+   //     , 'so_scb_ref' : {'brand':'Schmitz Cargobull', 'category': 'Reefers', 'form_name': 'special_offers', 'years': [2016, 2017, 2018, 2019, 2020, 2021]}
+   //     , 'so_kr_ref' : {'brand':'Krone', 'category': 'Reefers', 'form_name': 'special_offers', 'years': [2016, 2017, 2018, 2019, 2020, 2021]}
+   //     , 'so_scb_tent' : {'brand':'Schmitz Cargobull', 'category': 'Tilts', 'form_name': 'special_offers', 'years': [2016, 2017, 2018, 2019, 2020, 2021]}
+   //     , 'so_koe_tent' : {'brand':'Koegel', 'category': 'Tilts', 'form_name': 'special_offers', 'years': [2016, 2017, 2018, 2019, 2020, 2021]}
+   //     , 'so_kr_tent' : {'brand':'Krone', 'category': 'Tilts', 'form_name': 'special_offers', 'years': [2016, 2017, 2018, 2019, 2020, 2021]}
+   // };
+
+
+   // let select_na_mb = document.getElementById("na_mb")
+   // let select_na_daf = document.getElementById("na_daf")
+   // let select_na_scb_ref = document.getElementById("na_scb_ref")
+   // let select_na_kr_ref = document.getElementById("na_kr_ref")
+   // let select_na_kr_tent = document.getElementById("na_kr_tent")
+   // let select_na_scb_tent = document.getElementById("na_scb_tent")
+   // let select_na_koe_tent = document.getElementById("na_koe_tent")
+   // let select_na_avail = document.getElementById("na_avail")
+   // let select_so_volvo = document.getElementById("so_volvo")
+   // let select_so_mb = document.getElementById("so_mb")
+   // let select_so_daf = document.getElementById("so_daf")
+   // let select_so_scb_ref = document.getElementById("so_scb_ref")
+   // let select_so_kr_ref = document.getElementById("so_kr_ref")
+   // let select_so_scb_tent = document.getElementById("so_scb_tent")
+   // let select_so_koe_tent = document.getElementById("so_koe_tent")
+   // let select_so_kr_tent = document.getElementById("so_kr_tent")
+
+   // let selections_arr = [
+       // {'var': select_na_volvo, 'id': 'na_volvo1', 'brand':'Volvo', 'category': 'Trucks', 'form_name': 'new_arrivals', 'years': [2017, 2018, 2019, 2020, 2021]}
+       // {'var': select_na_mb, 'id': 'na_mb', 'brand':'Mercedes-Benz', 'category': 'Trucks', 'form_name': 'new_arrivals', 'years': [2016, 2017]},
+       // {'var': select_na_daf, 'id': 'na_daf', 'brand':'DAF', 'category': 'Trucks', 'form_name': 'new_arrivals', 'years': [2018, 2019, 2020, 2021]},
+       // {'var': select_na_scb_ref, 'id': 'na_scb_ref', 'brand':'Schmitz Cargobull', 'category': 'Reefers', 'form_name': 'new_arrivals', 'years': [2016, 2017, 2018, 2019, 2020, 2021]},
+       // {'var': select_na_kr_ref, 'id': 'na_kr_ref', 'brand':'Krone', 'category': 'Reefers', 'form_name': 'new_arrivals', 'years': [2018, 2019, 2020,2021]},
+       // {'var': select_na_kr_tent, 'id': 'na_kr_tent', 'brand':'Krone', 'category': 'Tilts', 'form_name': 'new_arrivals', 'years': [2017, 2018]},
+       // {'var': select_na_scb_tent, 'id': 'na_scb_tent', 'brand':'Schmitz Cargobull', 'category': 'Tilts', 'form_name': 'new_arrivals', 'years': [2016, 2017, 2018, 2019]},
+       // {'var': select_na_koe_tent, 'id': 'na_koe_tent', 'brand':'Koegel', 'category': 'Tilts', 'form_name': 'new_arrivals', 'years': [2016]},
+       // {'var': select_na_avail, 'id': 'na_avail', 'brand': 'Availability', 'category': 'Other', 'form_name': 'new_arrivals', 'years': ['In sales yard', 'Within 3 weeks', 'Within 6 weeks', 'Within 3 month', 'Within 5 months']},
+       // {'var': select_so_volvo, 'id': 'so_volvo', 'brand':'Volvo', 'category': 'Trucks', 'form_name': 'special_offers', 'years': [2016, 2017, 2018, 2019, 2020, 2021]},
+       // {'var': select_so_mb, 'id': 'so_mb', 'brand':'Mercedes-Benz', 'category': 'Trucks', 'form_name': 'special_offers', 'years': [2016, 2017, 2018, 2019, 2020, 2021]},
+       // {'var': select_so_daf, 'id': 'so_daf', 'brand':'DAF', 'category': 'Trucks', 'form_name': 'special_offers', 'years': [2016, 2017, 2018, 2019, 2020, 2021]},
+       // {'var': select_so_scb_ref, 'id': 'so_scb_ref', 'brand':'Schmitz Cargobull', 'category': 'Reefers', 'form_name': 'special_offers', 'years': [2016, 2017, 2018, 2019, 2020, 2021]},
+       // {'var': select_so_kr_ref, 'id': 'so_kr_ref', 'brand':'Krone', 'category': 'Reefers', 'form_name': 'special_offers', 'years': [2016, 2017, 2018, 2019, 2020, 2021]},
+       // {'var': select_so_scb_tent, 'id': 'so_scb_tent', 'brand':'Schmitz Cargobull', 'category': 'Tilts', 'form_name': 'special_offers', 'years': [2016, 2017, 2018, 2019, 2020, 2021]},
+       // {'var': select_so_koe_tent, 'id': 'so_koe_tent', 'brand':'Koegel', 'category': 'Tilts', 'form_name': 'special_offers', 'years': [2016, 2017, 2018, 2019, 2020, 2021]},
+       // {'var': select_so_kr_tent, 'id': 'so_kr_tent', 'brand':'Krone', 'category': 'Tilts', 'form_name': 'special_offers', 'years': [2016, 2017, 2018, 2019, 2020, 2021]}
+   // ]
+
+   // for (sel = 0; sel < selections_arr.length; sel++){
+   //     for (year = 0;year < selections_arr[sel].years; year++){
+   //         let y = selections_arr[sel].years[year]
+   //         let option = document.createElement("option")
+   //         option.value = String(y)
+   //         option.text = String(y)
+   //         selections_arr[sel].var.appendChild(option)
+   //     }
+   // }
+
+    let selectBox = new vanillaSelectBox("#brands",{"maxHeight":200,search:false});
     selectBox.setValue(['Abarth','DACIA'])
 
-    // let vsb_main = document.getElementsByClassName('vsb-main')[0]
-    // // let vsb_button = vsb_main.getElementsByTagName('button')[0]
-    //
-    //
-    // function close_dd_onclick(){
-    //     let vsb_menu = document.getElementsByClassName('vsb-menu')[0].style.visibility
-    //     if (vsb_menu === '' || vsb_menu === 'hidden'){
-    //         document.getElementsByClassName('vsb-menu')[0].style.visibility = 'visible'
-    //     }
-    //     else {
-    //         document.getElementsByClassName('vsb-menu')[0].style.visibility = 'hidden'
-    //     }
-    // }
-    //
-    // vsb_main.getElementsByTagName('button')[0].addEventListener('', close_dd_onclick)
-    //
-    // // vsb_main.getElementsByTagName('button')[0].onclick = function (){
-    // //     let vsb_menu = document.getElementsByClassName('vsb-menu')[0].style.visibility
-    // //     if (vsb_menu === '' || vsb_menu === 'hidden'){
-    // //         document.getElementsByClassName('vsb-menu')[0].style.visibility = 'visible'
-    // //     }
-    // //     else {
-    // //         document.getElementsByClassName('vsb-menu')[0].style.visibility = 'hidden'
-    // //     }
-    // // }
-
-
-
-
+    let years = ['2016', '2017', '2018', '2019']
+    let select_na_volvo = document.getElementById("na_volvo1")
+    for (var i = 0;i < years.length;i++) {
+       var option = document.createElement("option");
+       option.value = years[i];
+       option.text = years[i];
+        select_na_volvo.appendChild(option);
+    }
+    let selectBox_na_volvo = new vanillaSelectBox("#na_volvo1",{"maxHeight":200,search:false});
 
 </script>
 
